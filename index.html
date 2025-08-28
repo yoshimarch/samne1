@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>駿台合格者数非公表ニュース</title>
+    
+    <!-- Open Graph メタタグ（SNS共有用） -->
+    <meta property="og:title" content="駿台が大学合格者数を非公表へ">
+    <meta property="og:description" content="大手予備校の合計が定員上回る現状「意味を成さない」">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://yourdomain.com/thumbnail.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="駿台が大学合格者数を非公表へ">
+    <meta name="twitter:description" content="大手予備校の合計が定員上回る現状「意味を成さない」">
+    
     <style>
         * {
             margin: 0;
@@ -11,9 +23,17 @@
             box-sizing: border-box;
         }
 
+        body {
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
         .thumbnail-container {
-            width: 100%;
-            max-width: 400px;
+            width: 400px;
             height: 225px;
             background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #e74c3c 100%);
             position: relative;
@@ -127,10 +147,51 @@
             font-weight: bold;
         }
 
+        /* iframe埋め込み用のスタイル */
+        .embed-mode .thumbnail-container {
+            width: 100%;
+            height: 100%;
+            min-width: 300px;
+            min-height: 169px;
+        }
+
+        /* URLパラメータでサイズ調整 */
+        .size-small .thumbnail-container {
+            width: 300px;
+            height: 169px;
+        }
+
+        .size-medium .thumbnail-container {
+            width: 400px;
+            height: 225px;
+        }
+
+        .size-large .thumbnail-container {
+            width: 600px;
+            height: 338px;
+        }
+
+        .size-large .main-title {
+            font-size: 24px;
+        }
+
+        .size-large .subtitle {
+            font-size: 18px;
+        }
+
+        .size-large .program-name {
+            font-size: 16px;
+        }
+
+        .size-large .date {
+            font-size: 14px;
+        }
+
         @media (max-width: 480px) {
             .thumbnail-container {
                 max-width: 100%;
-                height: 180px;
+                height: auto;
+                aspect-ratio: 16/9;
             }
             
             .main-title {
@@ -142,6 +203,34 @@
             }
         }
     </style>
+
+    <script>
+        // URLパラメータでサイズを制御
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const size = urlParams.get('size') || 'medium';
+            const embed = urlParams.get('embed');
+            
+            if (embed) {
+                document.body.classList.add('embed-mode');
+            }
+            
+            document.body.classList.add('size-' + size);
+            
+            // クリック時の動作（オプション）
+            const thumbnail = document.querySelector('.thumbnail-container');
+            thumbnail.addEventListener('click', function() {
+                const targetUrl = urlParams.get('link');
+                if (targetUrl) {
+                    if (embed) {
+                        window.parent.open(targetUrl, '_blank');
+                    } else {
+                        window.open(targetUrl, '_blank');
+                    }
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="thumbnail-container">
