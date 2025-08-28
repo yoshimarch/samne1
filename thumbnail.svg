@@ -1,0 +1,60 @@
+<svg width="400" height="225" viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3e50"></stop>
+      <stop offset="50%" style="stop-color:#3498db"></stop>
+      <stop offset="100%" style="stop-color:#e74c3c"></stop>
+    </linearGradient>
+    <linearGradient id="overlayGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(0,0,0,0.4)"></stop>
+      <stop offset="100%" style="stop-color:rgba(0,0,0,0.7)"></stop>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="225" rx="12" fill="url(#bgGradient)"></rect>
+  
+  <!-- Overlay -->
+  <rect width="400" height="225" rx="12" fill="url(#overlayGradient)"></rect>
+  
+  <!-- News Badge -->
+  <rect x="16" y="16" width="60" height="20" rx="10" fill="#ff4757"></rect>
+  <text x="46" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">ニュース</text>
+  
+  <!-- Study Icon Background -->
+  <circle cx="360" cy="40" r="20" fill="rgba(255,255,255,0.2)"></circle>
+  <text x="360" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="white">📚</text>
+  
+  <!-- Main Content -->
+  <text x="20" y="80" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f1c40f">
+    駿台が大学合格者数を
+    <tspan fill="#f39c12" font-weight="bold">非公表</tspan>
+    へ
+  </text>
+  
+  <text x="20" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+    大手予備校の合計が定員上回る
+  </text>
+  <text x="20" y="135" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+    「意味を成さない」現状
+  </text>
+  
+  <!-- Program Info -->
+  <rect x="16" y="190" width="110" height="18" rx="9" fill="rgba(52,152,219,0.8)"></rect>
+  <text x="71" y="203" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ecf0f1">グッド！モーニング</text>
+  
+  <text x="380" y="203" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#bdc3c7">2025年8月2日</text>
+  
+  <!-- Shine Effect -->
+  <defs>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0);stop-opacity:0"></stop>
+      <stop offset="50%" style="stop-color:rgba(255,255,255,0.4);stop-opacity:1"></stop>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0);stop-opacity:0"></stop>
+    </linearGradient>
+    <animateTransform attributeName="gradientTransform" attributeType="XML" type="translate" values="-400 0;800 0;800 0" dur="3s" repeatCount="indefinite"></animateTransform>
+  </defs>
+  <rect width="400" height="225" rx="12" fill="url(#shine)">
+    <animateTransform attributeName="transform" type="translate" values="-400 0;800 0;800 0" dur="3s" repeatCount="indefinite"></animateTransform>
+  </rect>
+</svg>
