@@ -1,0 +1,42 @@
+ <svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg">
+  <!-- 宇宙の背景 -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#2a2a4a" />
+      <stop offset="100%" stop-color="#101030" />
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="100%" height="100%" fill="url(#bg)" />
+  
+  <!-- 星 -->
+  <g fill="#FFFFFF">
+    <circle cx="140" cy="95" r="1.5" opacity="0.8" />
+    <circle cx="420" cy="240" r="1" opacity="0.6" />
+    <circle cx="780" cy="310" r="1.2" opacity="0.7" />
+    <circle cx="950" cy="120" r="1.3" opacity="0.9" />
+    <circle cx="1130" cy="480" r="1" opacity="0.8" />
+    <circle cx="320" cy="590" r="1.4" opacity="0.7" />
+    <circle cx="640" y="160" r="1" opacity="0.6" />
+    <circle cx="1190" cy="350" r="1.2" opacity="0.8" />
+    <circle cx="170" cy="450" r="1.1" opacity="0.7" />
+    <circle cx="520" cy="500" r="1.3" opacity="0.9" />
+    <circle cx="870" cy="570" r="1.2" opacity="0.8" />
+    <circle cx="1040" cy="220" r="1" opacity="0.6" />
+    <circle cx="200" cy="180" r="1.1" opacity="0.7" />
+  </g>
+  
+  <!-- コンテンツエリア -->
+  <rect x="190" y="160" width="900" height="400" rx="20" ry="20" fill="rgba(30, 30, 80, 0.7)" />
+  
+  <!-- タイトル -->
+  <text x="640" y="260" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="#FFFFFF" text-anchor="middle" filter="url(#glow)">指導報告書の書き方の注意点</text>
+  
+  <!-- 説明 -->
+  <text x="640" y="340" font-family="Arial, sans-serif" font-size="30" fill="#B0C0FF" text-anchor="middle">指導報告書作成時の注意事項について</text>
+</svg>
